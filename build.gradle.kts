@@ -9,3 +9,4 @@ buildscript {
         classpath ("com.google.dagger:hilt-android-gradle-plugin:2.46.1")
     }
 }
+apply {"dagger.hilt.android.plugin"}

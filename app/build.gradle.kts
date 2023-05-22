@@ -1,9 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    //id ("dagger.hilt.android.plugin")
-    //id ("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+    apply { "dagger.hilt.android.plugin" }
+    apply {"androidx.navigation.safeargs.kotlin" }
 }
 
 android {
@@ -28,6 +29,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -70,18 +74,22 @@ dependencies {
 
     // Dagger Hilt
     implementation ("com.google.dagger:hilt-android:2.46.1")
-    kapt ("com.google.dagger:hilt-compiler:2.46.1")
+    kapt ("com.google.dagger:hilt-android-compiler:2.46.1")
+    //implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    //kapt("androidx.hilt:hilt-compiler:1.0.0-alpha03")
+
 
     // For instrumentation tests
     androidTestImplementation  ("com.google.dagger:hilt-android-testing:2.46.1")
-    kaptAndroidTest ("com.google.dagger:hilt-compiler:2.46.1")
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.46.1")
 
     // For local unit tests
     testImplementation ("com.google.dagger:hilt-android-testing:2.46.1")
-    kaptTest ("com.google.dagger:hilt-compiler:2.46.1")
+    kaptTest ("com.google.dagger:hilt-android-compiler:2.46.1")
 
     // DataStore
-    implementation ("androidx.datastore:datastore-preferences-android:1.1.0-alpha04")
+    implementation ("androidx.datastore:datastore-preferences:1.0.0-alpha01")
+
 }
 
 kapt {
