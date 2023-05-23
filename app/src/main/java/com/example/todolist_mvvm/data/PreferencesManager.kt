@@ -17,15 +17,15 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 
+
 private const val TAG = "PreferencesManager"
 
 enum class SortOrder { BY_NAME, BY_DATE }
 
 data class FilterPreferences(val sortOrder: SortOrder, val hideCompleted: Boolean)
 
-
+@Singleton
 class PreferencesManager @Inject constructor(@ApplicationContext context: Context) {
-
 
     private val dataStore = context.createDataStore("user_preferences")
 

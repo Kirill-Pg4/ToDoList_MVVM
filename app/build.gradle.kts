@@ -4,7 +4,7 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     apply { "dagger.hilt.android.plugin" }
-    apply {"androidx.navigation.safeargs.kotlin" }
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -32,6 +32,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
