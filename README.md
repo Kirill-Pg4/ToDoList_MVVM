@@ -32,7 +32,7 @@ This is my task list application developed using **Kotlin/Dagger2/Hilt/Room** an
 
 [![Hilt](https://img.shields.io/badge/Hilt-2.46.1-blue.svg)](https://dagger.dev/hilt/)
 
-[![Room](https://img.shields.io/badge/Room-2.46.1-Green.svg)](https://dagger.dev/hilt/)
+[![Room](https://img.shields.io/badge/Room-2.46.1-Green.svg)](https://developer.android.com/training/data-storage/room)
 
 
 
